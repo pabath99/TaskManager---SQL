@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Task Manager</string>
+    <string name="title_hint">Title</string>
+    <string name="description_hint">Description</string>
+    <string name="set_reminder">Set Reminder</string>
+    <string name="save_task">Save Task</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Login</string>
+    <string name="action_sign_in_short">Login</string> <!-- Changed here for clarity -->
+    <string name="welcome">Welcome!</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string> <!-- Use > directly -->
+    <string name="login_failed">Login failed</string>
+    <string name="register_prompt">Don\'t have an account? Register</string> <!-- Escaped apostrophe -->
+    <string name="uptodo">UpTodo</string>
+
+    <!-- String for due date with placeholder -->
+    <string name="due_date">Due Date: %1$s</string>
+
+    <!-- String for no due date -->
+    <string name="no_due_date">No due date</string>
+
+    <!-- String for task priority with placeholder -->
+    <string-array name="priority_levels">
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
+
+    <!-- String for task priority with placeholder -->
+    <string name="priority">Priority: %1$s</string>
+
+
+    <string name="stopwatch_icon">Stopwatch Icon</string>
+    <string name="start_timer">Start Timer</string>
+    <string name="reset_timer">Reset Timer</string>
+    <string name="stop_timer">Stop Timer</string>
+</resources>

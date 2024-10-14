@@ -1,0 +1,119 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    >
+
+    <!-- Stopwatch Icon -->
+    <ImageView
+        android:id="@+id/ivStopwatchIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="39dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/swicon"
+        android:contentDescription="@string/stopwatch_icon" />
+
+    <!-- Stopwatch Title Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardTitle"
+        android:layout_width="200dp"
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:foregroundGravity="center"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="Stop Watch"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFFDE"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Timer Display Card (Center Circle) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardTimer"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:layout_below="@id/cardTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="92dp"
+        android:elevation="40dp"
+        app:cardCornerRadius="120dp"
+        app:cardElevation="40dp"
+        app:cardBackgroundColor="#555555">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0:00:00.000"
+                android:textColor="@color/textColor"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- LinearLayout for Start/Stop/Reset Buttons (Left/Center/Right) -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardTimer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="172dp"
+        android:orientation="horizontal">
+
+        <!-- Start Button (Left) -->
+        <ImageView
+            android:id="@+id/btnStart"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/play_icon"
+            android:contentDescription="@string/start_timer" />
+
+        <!-- Reset Button (Center) -->
+        <ImageView
+            android:id="@+id/btnReset"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/reset_icon"
+            android:contentDescription="@string/reset_timer" />
+
+        <!-- Stop Button (Right) -->
+        <ImageView
+            android:id="@+id/btnStop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/stop_icon"
+            android:contentDescription="@string/stop_timer" />
+    </LinearLayout>
+</RelativeLayout>

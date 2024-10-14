@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.taskmanager">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Task Manager"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TaskManager">
+
+        <!-- Splash Activity (This launches first) -->
+        <activity
+            android:name=".ui.activity.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Main Activity -->
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:exported="true" />
+
+        <!-- Other activities -->
+        <activity android:name=".ui.activity.TimerActivity" />
+        <activity android:name=".ui.activity.AddEditTaskActivity" />
+        <activity android:name=".ui.activity.RegisterActivity" />
+        <activity android:name=".ui.activity.LoginActivity" />
+
+        <!-- Receiver for reminders -->
+        <receiver android:name=".ui.receiver.ReminderReceiver"
+            android:exported="true" />
+
+        <!-- Task Widget Provider for Home Screen Widget -->
+        <receiver android:name=".widget.TaskWidgetProvider"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/task_widget_info" />
+        </receiver>
+
+<!--        &lt;!&ndash; Service for handling widget updates (if needed for complex widgets) &ndash;&gt;-->
+<!--        <service-->
+<!--            android:name=".ui.widget.TaskWidgetService"-->
+<!--            android:permission="android.permission.BIND_REMOTEVIEWS" />-->
+
+    </application>
+
+</manifest>
